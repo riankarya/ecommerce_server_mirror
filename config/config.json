@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "emeralda22",
+    "database": "e-commerce-cms",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "emeralda22",
+    "database": "e-commerce-cms-test",
+    "host": "localhost",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
