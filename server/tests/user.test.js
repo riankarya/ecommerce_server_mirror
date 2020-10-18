@@ -12,13 +12,9 @@ beforeAll(async() => {
   await User.create(user1)
 })
 
-afterAll(async done => {
-  done();
-});
-
 describe('User Routes', () => {
   describe('POST /login', () => {
-    test('Success should return status 201 and user object', (done) => {
+    test('Success should return status 200 and user object', (done) => {
       request(app)
         .post('/users/login')
         .send({

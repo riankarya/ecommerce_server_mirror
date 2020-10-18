@@ -46,10 +46,6 @@ beforeAll(async () => {
   //  get token from login user customer
 })
 
-afterAll(async done => {
-  done();
-});
-
 describe('Product Routes', () => {
   describe('POST /products', () => {
     test('Success should return status 201 and product object', (done) => {

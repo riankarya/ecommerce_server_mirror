@@ -19,6 +19,7 @@ class Controller {
             .catch(next)
     }
     static loginUser(req, res, next) {
+        console.log(req.body)
         const { email, password } = req.body
         let errors = []
         if(!email.length) errors.push('email tidak boleh kosong')

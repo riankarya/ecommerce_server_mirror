@@ -64,6 +64,16 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       }
+    },
+    category: {
+      type: DataTypes.STRING,
+      validate: {
+        customValidator(value) {
+          if (value === '') {
+            throw new Error('category harus diisi')
+          }
+        }
+      }
     }
   }, {
     sequelize,
