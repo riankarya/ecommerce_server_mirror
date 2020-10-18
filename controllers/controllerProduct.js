@@ -1,9 +1,27 @@
 const { Product } = require('../models')
 
 class Controller {
+  static products(req, res, next) {
+    Product.findAll()
+      .then(data => {
+        res.status(202).json({ data })
+      })
+      .catch(err => {
+        next(err)
+      })
+  }
+  static productsById(req, res, next) {
+    const id = +req.params.id
+    Product.findOne({ where: { id } })
+      .then(data => {
+        if(!data) throw {name: 'ProductNotFound', error: "not found" }
+        res.status(200).json({ data })
+      })
+      .catch(next)
+  }
   static addProducts(req, res, next) {
-    const { name, image_url, price, stock } = req.body
-    const obj = { name, image_url, price, stock }
+    const { name, image_url, price, stock, category } = req.body
+    const obj = { name, image_url, price, stock, category }
     Product.create(obj)
       .then(data => {
         res.status(201).json({ msg: 'sukses nambah produk', data })
@@ -12,8 +30,8 @@ class Controller {
   }
   static editProducts(req, res, next) {
     const id = +req.params.id
-    const { name, image_url, price, stock } = req.body
-    const obj = { name, image_url, price, stock }
+    const { name, image_url, price, stock, category } = req.body
+    const obj = { name, image_url, price, stock, category }
     Product.update(obj, { where: { id } })
       .then(() => {
         return Product.findOne({ where: { id } })
