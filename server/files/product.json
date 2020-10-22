@@ -1,0 +1,72 @@
+[
+    {
+        "name": "PatenMan",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/61juk-IkWjL._AC_SL1000_.jpg",
+        "price": 3000000,
+        "stock": 1,
+        "category": "men"
+    },
+    {
+        "name": "Air Jahat for women",
+        "image_url": "https://media.danmurphys.com.au/dmo/product/672777-1.png",
+        "price": 1250000,
+        "stock": 10,
+        "category": "women"
+    },
+    {
+        "name": "Air Jahat for men",
+        "image_url": "https://img.thewhiskyexchange.com/900/blend_joh84.jpg",
+        "price": 2500000,
+        "stock": 20,
+        "category": "men"
+    },
+    {
+        "name": "Goros",
+        "image_url": "https://shoplineimg.com/5c5d34e4ec219000010d4736/5d70c8ba282a6e003bc30847/800x.jpg?",
+        "price": 225000000,
+        "stock": 3,
+        "category": "accessory"
+    },
+    {
+        "name": "Keong Racun Package",
+        "image_url": "https://haicom222.files.wordpress.com/2010/07/sinta-jojo.jpg?w=298",
+        "price": 35000000,
+        "stock": 1,
+        "category": "women"
+    },
+    {
+        "name": "Next Level Beauty StarterPack",
+        "image_url": "https://i.pinimg.com/originals/17/5c/f0/175cf045342c7e41a644dd389cef718f.jpg",
+        "price": 5000000,
+        "stock": 10,
+        "category": "cosmetic"
+    },
+    {
+        "name": "Quartet Card",
+        "image_url": "https://cf.shopee.co.id/file/456cc1ecee8b9f07d7599c48d8c4e996",
+        "price": 3000,
+        "stock": 30,
+        "category": "kid"
+    },
+    {
+        "name": "Hat, Kids included!",
+        "image_url": "https://cf.shopee.co.id/file/47bd27da280d4f36573eeca983642a8e",
+        "price": 50000000,
+        "stock": 2,
+        "category": "kid"
+    },
+    {
+        "name": "Angel's Wing, straight from heaven!",
+        "image_url": "https://i.pinimg.com/originals/fe/88/c8/fe88c8b44db857337793454a5d6e6509.jpg",
+        "price": 999999999,
+        "stock": 1,
+        "category": "accessory"
+    },
+    {
+        "name": "Cosmetic's Store",
+        "image_url": "https://westcoastshopfitting.com.au/wp-content/uploads/2015/06/Cosmetics-0.jpg",
+        "price": 75000000,
+        "stock": 1,
+        "category": "cosmetic"
+    }
+]

@@ -51,7 +51,7 @@ class Controller {
         res.status(200).json({msg: 'sukses delete produk', data})
     })
     .catch(next)
-}
+  }
 }
 
 module.exports = Controller

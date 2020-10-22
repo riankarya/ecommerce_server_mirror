@@ -7,7 +7,7 @@
     "dev": "nodemon listen.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "riankarya",
   "license": "ISC",
   "description": "",
   "dependencies": {
