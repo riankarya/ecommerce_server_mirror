@@ -25,6 +25,7 @@ function errorHandler(err, req, res, next) {
             res.status(404).json({ errors: [err.msg] })
             break
         default:
+            console.log(err);
             res.status(500).json({ errors: ['Internal Server Error'] })
             break
     }
