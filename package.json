@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles --forceExit",
-    "dev": "nodemon listen.js"
+    "dev": "nodemon listen.js",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "riankarya",
