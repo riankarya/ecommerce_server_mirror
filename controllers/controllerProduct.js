@@ -2,8 +2,10 @@ const { Product } = require('../models')
 
 class Controller {
   static products(req, res, next) {
+    console.log('ASHHHHHHHHHHUPPPPPPPPPPPPPPP');
     Product.findAll()
       .then(data => {
+        console.log('ASUP TI PRODUCT CONTROLLER');
         res.status(202).json({ data })
       })
       .catch(err => {
@@ -20,6 +22,7 @@ class Controller {
       .catch(next)
   }
   static addProducts(req, res, next) {
+    console.log('ASUP TI ADD PRODUCT');
     const { name, image_url, price, stock, category } = req.body
     const obj = { name, image_url, price, stock, category }
     Product.create(obj)
