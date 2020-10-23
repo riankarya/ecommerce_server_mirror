@@ -8,18 +8,26 @@ const user1 = {
   password: 'riankarya'
 }
 
+const user2 = {
+  email: 'meral@mail.com',
+  password: 'meral',
+  role: 'admin'
+}
+
 const product1 = {
   name: 'kursi gaming',
   image_url: 'https://ecs7.tokopedia.net/img/cache/700/product-1/2019/1/8/5174415/5174415_a53fbb23-c454-45cc-896e-5330389ebf5d.jpg',
   price: 3000000,
-  stock: 5
+  stock: 5,
+  category: 'men'
 }
 
 const editProduct1 = {
   name: 'kursi gaming',
   image_url: 'https://ecs7.tokopedia.net/img/cache/700/product-1/2019/1/8/5174415/5174415_a53fbb23-c454-45cc-896e-5330389ebf5d.jpg',
   price: 2500000,
-  stock: 3
+  stock: 3,
+  category: 'men'
 }
 
 let userAdmin = null
@@ -31,7 +39,8 @@ let productId = null
 
 beforeAll(async () => {
   await Product.destroy({ where: {}})
-  await User.destroy({ where: {role: 'customer'} })
+  await User.destroy({ where: {}})
+  await User.create(user2)
   userAdmin = await User.findOne({where: {role: 'admin'}})
   userAdminToken = generateToken({id: userAdmin.id, email: userAdmin.email, role: userAdmin.role})
   await User.create(user1)
@@ -41,6 +50,15 @@ beforeAll(async () => {
   await Product.create(product1)
   product = await Product.findAll()
   productId = product[0].dataValues.id
+  product = {
+    id: product[0].dataValues.id,
+    name: product[0].dataValues.name,
+    image_url: product[0].dataValues.image_url,
+    price: product[0].dataValues.price,
+    stock: product[0].dataValues.stock,
+    category: product[0].dataValues.category
+  }
+  console.log(product, 'ASUP TI BEFORE ALL')
   //  create user customer
   //  get token from login user admin
   //  get token from login user customer
@@ -50,7 +68,7 @@ describe('Product Routes', () => {
   describe('POST /products', () => {
     test('Success should return status 201 and product object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userAdminToken
         })
@@ -68,7 +86,7 @@ describe('Product Routes', () => {
     })
     test('Fail null access token should return status 401 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: ''
         })
@@ -86,7 +104,7 @@ describe('Product Routes', () => {
     })
     test('Fail customer access token should return status 403 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userCustomerToken
         })
@@ -104,7 +122,7 @@ describe('Product Routes', () => {
     })
     test('Fail null input should return status 422 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userAdminToken
         })
@@ -132,7 +150,7 @@ describe('Product Routes', () => {
     })
     test('Fail minus stock input should return status 422 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userAdminToken
         })
@@ -157,7 +175,7 @@ describe('Product Routes', () => {
     })
     test('Fail minus price input should return status 422 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userAdminToken
         })
@@ -182,7 +200,7 @@ describe('Product Routes', () => {
     })
     test('Fail worng data type input should return status 422 and error object', (done) => {
       request(app)
-        .post('/products')
+        .post('/addProducts')
         .set({
           token: userAdminToken
         })

@@ -36,7 +36,7 @@ class Controller {
                 }
                 const id = +data.id
                 let token = generateToken(payload)
-                res.status(200).json({ msg: 'berhasil login', token, id })
+                res.status(200).json({ msg: 'berhasil login', token, id, payload })
             })
             .catch(next)
     }

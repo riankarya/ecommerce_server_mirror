@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       price: {
-        type: Sequelize.BIGINT
+        type: Sequelize.INTEGER
       },
       stock: {
         type: Sequelize.INTEGER

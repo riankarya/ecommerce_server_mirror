@@ -22,6 +22,7 @@ function errorHandler(err, req, res, next) {
             res.status(403).json({ errors: [err.msg] })
             break
         case 'ProductNotFound':
+            console.log(err);
             res.status(404).json({ errors: [err.msg] })
             break
         default:
